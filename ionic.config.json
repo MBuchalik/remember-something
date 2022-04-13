@@ -1,0 +1,7 @@
+{
+  "name": "remember-something",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
