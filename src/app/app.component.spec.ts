@@ -4,10 +4,8 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-
   beforeEach(waitForAsync(() => {
-
-    TestBed.configureTestingModule({
+    void TestBed.configureTestingModule({
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
@@ -15,9 +13,9 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    void expect(app).toBeTruthy();
   });
   // TODO: add more tests!
-
 });
