@@ -11,6 +11,10 @@ const config: CapacitorConfig = {
       smallIcon: 'ic_notification',
       iconColor: '#2f86ef',
     },
+    SplashScreen: {
+      launchAutoHide: false,
+      backgroundColor: '#2f86efff',
+    },
   },
 };
 

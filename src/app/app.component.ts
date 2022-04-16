@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { SplashScreen } from '@capacitor/splash-screen';
 import { Subscription } from 'rxjs';
 
 import { OnboardingService } from './services/onboarding.service';
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
   readonly subscriptions: Subscription[] = [];
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private onboardingService: OnboardingService,
     private reminderService: ReminderService,
     private viewService: ViewService,
@@ -43,6 +45,10 @@ export class AppComponent implements OnInit, OnDestroy {
         this.currentView = view;
       });
     this.subscriptions.push(viewServiceSubscription);
+
+    window.setTimeout(() => {
+      void SplashScreen.hide();
+    }, 0);
   }
 
   // Technically, this will never be called. But let's add it anyways to avoid copy-and-paste issues if we decide to split this component up in the future.
