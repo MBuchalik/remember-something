@@ -1,0 +1,22 @@
+.main-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #ffffff;
+  border-radius: 100px;
+  padding: 10px 40px;
+  font-size: 1.2rem;
+  box-sizing: content-box;
+  white-space: nowrap;
+  overflow: hidden;
+  outline: none !important;
+}
+.main-button.activate-reminder {
+  color: #2f86ef;
+}
+.main-button.deactivate-reminder {
+  color: #e32c80;
+}

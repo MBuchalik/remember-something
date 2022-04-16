@@ -9,6 +9,8 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+// Technically, it is a complete overkill that we are using the entire Ionic CSS for this small app. But it should not really affect load times since we are loading these files from the local file system.
+
 /* Core CSS required for Ionic components to work properly */
 @import '~@ionic/angular/css/core.css';
 
@@ -19,8 +21,8 @@
 @import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import '~@ionic/angular/css/padding.css';
+/*@import '~@ionic/angular/css/padding.css';
 @import '~@ionic/angular/css/float-elements.css';
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
-@import '~@ionic/angular/css/flex-utils.css';
+@import '~@ionic/angular/css/flex-utils.css';*/

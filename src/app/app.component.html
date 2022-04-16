@@ -1,3 +1,39 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-content>
+    <div
+      class="gradient reminder-inactive"
+      [class.show]="currentView === VIEW.Main && !reminderIsActive"
+    ></div>
+    <div
+      class="gradient reminder-active"
+      [class.show]="currentView === VIEW.Main && reminderIsActive"
+    ></div>
+
+    <div
+      class="main-content"
+      [class.main-view]="currentView === VIEW.Main"
+      [class.reminder-active]="reminderIsActive"
+    >
+      <div>
+        <button
+          type="button"
+          class="menu-button"
+          [class.cross]="currentView === VIEW.LegalMenu"
+          [class.arrow]="
+            currentView === VIEW.Imprint || currentView === VIEW.Licenses
+          "
+          (click)="handleMenuButtonClick()"
+        >
+          <div class="menu-button-bar"></div>
+          <div class="menu-button-bar"></div>
+          <div class="menu-button-bar"></div>
+        </button>
+      </div>
+
+      <app-main-view *ngIf="currentView === VIEW.Main"></app-main-view>
+      <app-legal-menu *ngIf="currentView === VIEW.LegalMenu"></app-legal-menu>
+      <app-imprint *ngIf="currentView === VIEW.Imprint"></app-imprint>
+      <app-licenses *ngIf="currentView === VIEW.Licenses"></app-licenses>
+    </div>
+  </ion-content>
 </ion-app>

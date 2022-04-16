@@ -11,6 +11,7 @@
     "lint": "ng lint"
   },
   "dependencies": {
+    "@angular/animations": "~13.3.2",
     "@angular/common": "~13.3.2",
     "@angular/core": "~13.3.2",
     "@angular/forms": "~13.3.2",

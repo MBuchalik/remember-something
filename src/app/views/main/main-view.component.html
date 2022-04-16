@@ -1,0 +1,16 @@
+<button
+  type="button"
+  class="main-button activate-reminder"
+  [@main-button]="reminderIsActive ? 'invisible' : 'visible'"
+  (click)="toggleReminder()"
+>
+  Activate Reminder
+</button>
+<button
+  type="button"
+  class="main-button deactivate-reminder"
+  [@main-button]="reminderIsActive ? 'visible' : 'invisible'"
+  (click)="toggleReminder()"
+>
+  Deactivate Reminder
+</button>

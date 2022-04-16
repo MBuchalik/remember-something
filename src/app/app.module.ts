@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IonicModule } from '@ionic/angular';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ImprintComponent } from './views/imprint/imprint.component';
+import { LegalMenuComponent } from './views/legal-menu/legal-menu.component';
+import { LicensesComponent } from './views/licenses/licenses.component';
+import { MainViewComponent } from './views/main/main-view.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  declarations: [
+    AppComponent,
+    ImprintComponent,
+    LegalMenuComponent,
+    LicensesComponent,
+    MainViewComponent,
+  ],
+  imports: [BrowserModule, BrowserAnimationsModule, IonicModule.forRoot()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

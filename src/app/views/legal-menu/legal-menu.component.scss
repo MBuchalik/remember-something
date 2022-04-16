@@ -1,0 +1,37 @@
+.list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin-top: 3rem;
+}
+.list-item {
+  margin: 2rem;
+}
+.list-item button {
+  background: none !important;
+  outline: none !important;
+  font-size: 1.3rem;
+}
+
+.list-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeIn 1s ease forwards;
+}
+.list-item.first-item {
+  animation-delay: 0.3s;
+}
+.list-item.second-item {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
