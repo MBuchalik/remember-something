@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
+import { OnboardingService } from './services/onboarding.service';
 import { ReminderService } from './services/reminder.service';
 import { View, ViewService } from './services/view.service';
 
@@ -16,14 +17,19 @@ export class AppComponent implements OnInit, OnDestroy {
 
   reminderIsActive = false;
 
+  showOnboarding = false;
+
   readonly subscriptions: Subscription[] = [];
 
   constructor(
+    private onboardingService: OnboardingService,
     private reminderService: ReminderService,
     private viewService: ViewService,
   ) {}
 
   ngOnInit(): void {
+    this.showOnboarding = this.onboardingService.shouldShowOnboarding();
+
     this.reminderIsActive = this.reminderService.isReminderActive();
 
     const reminderServiceSubscription =
@@ -55,5 +61,10 @@ export class AppComponent implements OnInit, OnDestroy {
     };
 
     this.viewService.setCurrentView(viewToNextViewMap[this.currentView]);
+  }
+
+  handleOnboardingClose(): void {
+    this.onboardingService.setHasShownOnboarding();
+    this.showOnboarding = false;
   }
 }

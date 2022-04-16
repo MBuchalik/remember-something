@@ -1,0 +1,24 @@
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.content {
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+}
+.got-it-button-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+.got-it-button {
+  border: 3px solid #e32c80;
+  color: #e32c80;
+  background: none;
+  outline: none !important;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  font-weight: bold;
+}
