@@ -5,6 +5,13 @@ const config: CapacitorConfig = {
   appName: 'Remember Something',
   webDir: 'www',
   bundledWebRuntime: false,
+
+  plugins: {
+    LocalNotifications: {
+      smallIcon: 'ic_notification',
+      iconColor: '#2f86ef',
+    },
+  },
 };
 
 export default config;
