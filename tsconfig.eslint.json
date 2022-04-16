@@ -4,5 +4,5 @@
 */
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "capacitor.config.ts"]
 }
