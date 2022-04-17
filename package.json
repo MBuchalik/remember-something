@@ -9,7 +9,8 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
-    "generate-android-resources": "cordova-res android --skip-config --copy"
+    "generate-android-resources": "cordova-res android --skip-config --copy",
+    "check-licenses": "node scripts/check-licenses-for-changes.js"
   },
   "dependencies": {
     "@angular/animations": "~13.3.2",
