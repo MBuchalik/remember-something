@@ -51,7 +51,6 @@ const ANIMATION_DURATION_MILLIS = 1000;
 })
 export class MainViewComponent implements OnInit, OnDestroy {
   reminderIsActive = false;
-  buttonText = 'Activate Reminder';
 
   readonly subscriptions: Subscription[] = [];
 
@@ -63,11 +62,6 @@ export class MainViewComponent implements OnInit, OnDestroy {
     const reminderServiceSubscription =
       this.reminderService.onReminderStatusChange.subscribe((isActive) => {
         this.reminderIsActive = isActive;
-
-        // Right at the "middle" of the animation, we change the button text.
-        window.setTimeout(() => {
-          this.updateButtonText();
-        }, ANIMATION_DURATION_MILLIS / 2);
       });
     this.subscriptions.push(reminderServiceSubscription);
   }
@@ -80,13 +74,5 @@ export class MainViewComponent implements OnInit, OnDestroy {
 
   toggleReminder(): void {
     this.reminderService.toggleReminder();
-  }
-
-  private updateButtonText(): void {
-    if (this.reminderIsActive) {
-      this.buttonText = 'Deactivate Reminder';
-      return;
-    }
-    this.buttonText = 'Activate Reminder';
   }
 }
