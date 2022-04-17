@@ -9,8 +9,12 @@
   max-width: 500px;
   padding: 2rem;
 }
+.heading {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
 .got-it-button-container {
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align: center;
 }
 .got-it-button {
@@ -21,4 +25,5 @@
   font-size: 1rem;
   padding: 0.8rem 1.6rem;
   font-weight: bold;
+  letter-spacing: 1px;
 }
