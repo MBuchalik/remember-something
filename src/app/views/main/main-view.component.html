@@ -4,7 +4,7 @@
   [@main-button]="reminderIsActive ? 'invisible' : 'visible'"
   (click)="toggleReminder()"
 >
-  Activate Reminder
+  {{ 'activate_reminder' | lang }}
 </button>
 <button
   type="button"
@@ -12,5 +12,5 @@
   [@main-button]="reminderIsActive ? 'visible' : 'invisible'"
   (click)="toggleReminder()"
 >
-  Deactivate Reminder
+  {{ 'deactivate_reminder' | lang }}
 </button>

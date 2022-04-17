@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
+import { LangPipe } from './pipes/lang.pipe';
 import { ImprintComponent } from './views/imprint/imprint.component';
 import { LegalMenuComponent } from './views/legal-menu/legal-menu.component';
 import { LicensesComponent } from './views/licenses/licenses.component';
@@ -14,6 +15,7 @@ import { MainViewComponent } from './views/main/main-view.component';
   declarations: [
     AppComponent,
     ImprintComponent,
+    LangPipe,
     LegalMenuComponent,
     LicensesComponent,
     MainViewComponent,

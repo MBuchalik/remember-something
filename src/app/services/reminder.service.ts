@@ -3,6 +3,8 @@ import { LocalNotifications } from '@capacitor/local-notifications';
 import { Platform } from '@ionic/angular';
 import { Subject } from 'rxjs';
 
+import { LanguageService } from './language.service';
+
 const LOCALSTORAGE_KEY_REMINDER_ACTIVE = 'reminder-active';
 
 const LOCAL_NOTIFICATION_ID = 1;
@@ -14,7 +16,10 @@ const LOCAL_NOTIFICATION_CHANNEL_ID = 'Channel-1';
 export class ReminderService {
   readonly onReminderStatusChange = new Subject<boolean>();
 
-  constructor(private platform: Platform) {
+  constructor(
+    private languageService: LanguageService,
+    private platform: Platform,
+  ) {
     void this.initialize();
   }
 
@@ -122,8 +127,8 @@ export class ReminderService {
           id: LOCAL_NOTIFICATION_ID,
           channelId: LOCAL_NOTIFICATION_CHANNEL_ID,
 
-          title: 'Remember Something',
-          body: 'I should remind you of something...',
+          title: this.languageService.getPhrase('notification_title'),
+          body: this.languageService.getPhrase('notification_body'),
 
           ongoing: true,
           // For some reason, it seems like the notification will still be cleared even if `autoCancel` is set to `false`.

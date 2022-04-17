@@ -1,13 +1,13 @@
 <ul class="list">
   <li class="list-item first-item">
     <button type="button" (click)="viewService.setCurrentView(VIEW.Imprint)">
-      Imprint
+      {{ 'imprint' | lang }}
     </button>
   </li>
 
   <li class="list-item second-item">
     <button type="button" (click)="viewService.setCurrentView(VIEW.Licenses)">
-      Licenses
+      {{ 'licenses' | lang }}
     </button>
   </li>
 </ul>

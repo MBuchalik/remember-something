@@ -1,13 +1,8 @@
 <div class="container">
   <div class="content">
-    <h2 class="heading">Welcome!</h2>
+    <h2 class="heading">{{ 'welcome!' | lang }}</h2>
 
-    Remember Something is probably the world's simplest Reminder App.<br /><br />You
-    can't type in what you want to be reminded of. Instead, there is only one
-    button that will remind you of <strong>something</strong>.<br /><br />An
-    example: Imagine, you have to do something important today and don't want to
-    forget it. Simply press the button "Activate Reminder". You do not need to
-    take any further action.
+    <div [innerHtml]="'onboarding_description_html' | lang"></div>
 
     <div class="got-it-button-container">
       <button
@@ -15,7 +10,7 @@
         class="got-it-button"
         (click)="closeOnboarding.emit()"
       >
-        Got it!
+        {{ 'got_it!' | lang }}
       </button>
     </div>
   </div>
