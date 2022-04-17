@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalNotifications } from '@capacitor/local-notifications';
+import { Platform } from '@ionic/angular';
 import { Subject } from 'rxjs';
 
 const LOCALSTORAGE_KEY_REMINDER_ACTIVE = 'reminder-active';
@@ -13,7 +14,7 @@ const LOCAL_NOTIFICATION_CHANNEL_ID = 'Channel-1';
 export class ReminderService {
   readonly onReminderStatusChange = new Subject<boolean>();
 
-  constructor() {
+  constructor(private platform: Platform) {
     void this.initialize();
   }
 
@@ -67,6 +68,10 @@ export class ReminderService {
   }
 
   private async initializeChannel(): Promise<void> {
+    if (!this.platform.is('capacitor')) {
+      return;
+    }
+
     const { channels } = await LocalNotifications.listChannels();
 
     for (const channel of channels) {
