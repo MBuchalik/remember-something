@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { StatusBar } from '@capacitor/status-bar';
+import { Platform } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 
 import { OnboardingService } from './services/onboarding.service';
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private onboardingService: OnboardingService,
+    private platform: Platform,
     private reminderService: ReminderService,
     private viewService: ViewService,
   ) {}
@@ -47,9 +49,17 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.push(viewServiceSubscription);
 
     window.setTimeout(() => {
-      void StatusBar.setBackgroundColor({ color: '#000000' });
-      void SplashScreen.hide();
+      this.initializeNative();
     }, 0);
+  }
+
+  private initializeNative(): void {
+    if (!this.platform.is('capacitor')) {
+      return;
+    }
+
+    void StatusBar.setBackgroundColor({ color: '#000000' });
+    void SplashScreen.hide();
   }
 
   // Technically, this will never be called. But let's add it anyways to avoid copy-and-paste issues if we decide to split this component up in the future.
