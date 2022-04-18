@@ -1,5 +1,6 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
+import { StatusBar } from '@capacitor/status-bar';
 import { Subscription } from 'rxjs';
 
 import { OnboardingService } from './services/onboarding.service';
@@ -23,7 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
   readonly subscriptions: Subscription[] = [];
 
   constructor(
-    private changeDetectorRef: ChangeDetectorRef,
     private onboardingService: OnboardingService,
     private reminderService: ReminderService,
     private viewService: ViewService,
@@ -47,6 +47,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.push(viewServiceSubscription);
 
     window.setTimeout(() => {
+      void StatusBar.setBackgroundColor({ color: '#000000' });
       void SplashScreen.hide();
     }, 0);
   }
