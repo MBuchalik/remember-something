@@ -18,7 +18,7 @@ export const PHRASES_EN: Phrases = {
   deactivate_reminder: () => 'Deactivate Reminder',
 
   notification_title: () => 'Remember Something',
-  notification_body: () => 'Ich should remind you of something...',
+  notification_body: () => 'You wanted me to remind you of something...',
 
   imprint: () => 'Imprint',
   licenses: () => 'Licenses',
