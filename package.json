@@ -8,7 +8,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "lint": "ng lint",
+    "lint": "ng lint && npm run lint-additional-files",
+    "lint-additional-files": "prettier --check **/*.{md,json} !.angular/** !android/**",
     "generate-android-resources": "cordova-res android --skip-config --copy",
     "check-licenses": "node scripts/check-licenses-for-changes.js"
   },
