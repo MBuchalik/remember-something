@@ -5,10 +5,12 @@
 Remember Something is a very simple Reminder app running on Android. Built with TypeScript, Angular, Ionic, and Capacitor.
 
 <p align="center">
-  <img src="docs/images/head-image.png" alt="Remember Something Head Image" style="max-width: 100%">
+  <img src="docs/images/head-image.png" alt="Remember Something Head Image" width="400px">
 </p>
 
-[<img alt="Get it on Google Play" src="docs/images/google-play-badge.png" style="max-width: 200px">](https://play.google.com/store/apps/details?id=de.martin_buchalik.remember_something)
+<a href="https://play.google.com/store/apps/details?id=de.martin_buchalik.remember_something">
+  <img alt="Get it on Google Play" src="docs/images/google-play-badge.png" width="200px">
+</a>
 
 The app is available on the Google Play Store. If you would like to build it yourself, then take a look at the [build documentation](docs/build.md).
 
@@ -21,8 +23,7 @@ Thus, the app will only remind you that there is _something_ you have to do. It 
 The reminder can be created very quickly: You don't have to type any information into your device. Very useful if you are in a hurry.
 
 <div>
-  <img src="docs/images/reminder-inactive.png" style="max-width: 50%; float: left;">
-  <img src="docs/images/reminder-active.png" style="max-width: 50%">
+  <img src="docs/images/reminder-inactive.png" width="50%"><img src="docs/images/reminder-active.png" width="50%">
 </div>
 
 ## Legal Information
