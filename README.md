@@ -8,7 +8,7 @@ Remember Something is a very simple Reminder app running on Android. Built with 
   <img src="docs/images/head-image.png" alt="Remember Something Head Image" width="400px">
 </p>
 
-<a href="https://play.google.com/store/apps/details?id=de.martin_buchalik.remember_something">
+<a href="https://play.google.com/store/apps/details?id=de.martin_buchalik.remember_something" rel="noreferrer">
   <img alt="Get it on Google Play" src="docs/images/google-play-badge.png" width="200px">
 </a>
 
